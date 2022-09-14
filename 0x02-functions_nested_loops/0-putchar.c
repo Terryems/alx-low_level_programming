@@ -1,4 +1,3 @@
-
 #include "main.h"
 /**
  *main - prints the stdout
