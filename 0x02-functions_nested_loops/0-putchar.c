@@ -1,7 +1,8 @@
+
 #include "main.h"
 /**
- * main - prints the stdout
- * Return: 0 if successful
+ *main - prints the stdout
+ *Return: 0 if successful
  */
 int main(void)
 {
