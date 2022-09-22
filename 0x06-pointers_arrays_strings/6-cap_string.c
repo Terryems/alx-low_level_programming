@@ -1,18 +1,32 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
+ * cap_string - function that capitalize all word of the string
+ * @c: var
+ * Return: no return value
+ **/
+char *cap_string(char *c)
 {
-    char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
-    char *ptr;
+	int i, j;
+	int cpt = 32;
+	int sprt[] = {'\n', '\t', ',', ';', '.', '!', '?', '"', '(', ')',
+	'{', '}', ' ' };
 
-    ptr = cap_string(str);
-    printf("%s", ptr);
-    printf("%s", str);
-    return (0);
-}
+	for (i = 0; c[i] != '\0'; i++)
+	{
+		if (c[i] >= 'a' && c[i] <= 'z')
+		{
+			c[i] = c[i] - cpt;
+		}
+		cpt = 0;
+		for (j = 0; j <= 13; j++)
+		{
+
+			if (c[i] == sprt[j])
+			{
+				j = 13;
+				cpt = 32;
+			}
+		}
+	}
+	return (c);
+}}
