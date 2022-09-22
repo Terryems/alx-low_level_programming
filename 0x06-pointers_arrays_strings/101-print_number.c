@@ -1,23 +1,26 @@
 #include "main.h"
 /**
- * print_number - function that prints an integer
- * @n: is an integer assigned
- * Return: nothing
+ * rot13 - function that encode string
+ * @c: char variable
+ * Return: 0 always
  **/
-void print_number(int n)
+char *rot13(char *c)
 {
-	unsigned int i;
+	int i, j;
 
-	if (n < 0)
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		_putchar('-');
-		i = -n;
+		for (j = 0; a[j] != '\0'; j++)
+		{
+			if (c[i] == a[j])
+			{
+				c[i] = b[j];
+				break;
+			}
+		}
 	}
-	else
-	{
-		i = n;
-	}
-	if (i / 10 != 0)
-		print_number(i / 10);
-	_putchar((i % 10) + '0');
+	return (c);
 }
