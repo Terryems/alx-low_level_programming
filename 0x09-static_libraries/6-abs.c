@@ -1,18 +1,21 @@
-#include "main.h"
-#include <stdio.h>
+#include "main.h"
+
 /**
- * _abs - Declare a function passing an arg
- * Return: 0 if successsful
- * @c: initialized to 0
+ * _abs - Computes the absolute value
+ * of an integer.
+ *
+ * @n: input number as an integer.
+ *
+ * Return: absolute value
  */
-int _abs(int c)
+int _abs(int n)
 {
-	if (c > 0 || c == 0)
+	if (n < 0)
 	{
-	return (c);
+		return (n * -1);
 	}
 	else
 	{
-	return (c * -1);
+		return (n);
 	}
 }
